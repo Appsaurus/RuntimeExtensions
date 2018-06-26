@@ -1,0 +1,23 @@
+PODS:
+  - Runtime (0.7.1)
+  - RuntimeExtensions (0.1.7):
+    - Runtime
+
+DEPENDENCIES:
+  - RuntimeExtensions (from `../../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Runtime
+
+EXTERNAL SOURCES:
+  RuntimeExtensions:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  Runtime: 6b152eab4773d494041afe5480a84c91d86961b9
+  RuntimeExtensions: 0dfe2440f5c8d67500285d0ebb61deff5544dcf1
+
+PODFILE CHECKSUM: 062fe6b3ae85dc7ca3f7d4c5eb4dcc7cfffbddf7
+
+COCOAPODS: 1.5.0
