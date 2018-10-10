@@ -28,7 +28,7 @@ open class EnumUtils{
 }
 
 
-#if swift(>=4.1.50)
+#if swift(>=4.2)
 #else
 public protocol CaseIterable: Hashable {
 	static var allCases: [Self] { get }
@@ -46,9 +46,9 @@ extension CaseIterable {
 }
 #endif
 
-extension CaseIterable{
+extension CaseIterable where Self: Hashable{
 
-	static public var caseSet: Set<Self> {
+    static public var caseSet: Set<Self>  {
 		typealias S = Self
 		return Set<S>(S.allCases)
 	}
