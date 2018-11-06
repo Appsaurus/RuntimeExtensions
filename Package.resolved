@@ -5,9 +5,9 @@
         "package": "Runtime",
         "repositoryURL": "https://github.com/wickwirew/Runtime",
         "state": {
-          "branch": null,
-          "revision": "23357609f0df427d870bb4bd22ac14e0a4ea1346",
-          "version": "0.7.1"
+          "branch": "swift42",
+          "revision": "25f7d50212a81b572e9bf5eaa03980945e93898f",
+          "version": null
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/Appsaurus/SwiftTestUtils",
         "state": {
           "branch": null,
-          "revision": "b7dc270b7a9e71dbdd99bc046141f859e572c507",
-          "version": "1.0.0"
+          "revision": "76b498f338b4249898656947fa2713747fa429f7",
+          "version": "1.0.1"
         }
       }
     ]

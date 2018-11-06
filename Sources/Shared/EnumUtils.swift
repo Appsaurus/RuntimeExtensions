@@ -46,7 +46,7 @@ extension CaseIterable {
 }
 #endif
 
-extension CaseIterable{
+extension CaseIterable where Self: Hashable{
 
 	static public var caseSet: Set<Self> {
 		typealias S = Self

@@ -20,34 +20,6 @@
                ReferencedContainer = "container:RuntimeExtensions.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SwiftTestUtils::SwiftTestUtils"
-               BuildableName = "SwiftTestUtils.framework"
-               BlueprintName = "SwiftTestUtils"
-               ReferencedContainer = "container:RuntimeExtensions.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Runtime::Runtime"
-               BuildableName = "Runtime.framework"
-               BlueprintName = "Runtime"
-               ReferencedContainer = "container:RuntimeExtensions.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
