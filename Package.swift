@@ -1,4 +1,4 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -9,8 +9,8 @@ let package = Package(
 		.library(name: "RuntimeExtensions", targets: ["RuntimeExtensions"])
 	],
 	dependencies: [
-		.package(url: "https://github.com/wickwirew/Runtime", from: "1.1.0"),
-		.package(url: "https://github.com/Appsaurus/SwiftTestUtils", .upToNextMajor(from: "1.0.0"))
+		.package(url: "https://github.com/wickwirew/Runtime", from: "2.1.0"),
+		.package(url: "https://github.com/Appsaurus/SwiftTestUtils", from: "1.0.0")
 	],
 	targets: [
 		.target(name: "RuntimeExtensions", dependencies: ["Runtime"], path: "Sources/Shared"),

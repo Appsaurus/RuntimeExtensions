@@ -66,11 +66,11 @@ extension KVCStruct {
 /// Enables dynamic, KVC-style behavior for native Swift classes.
 public protocol KVC : class {}
 
-extension KVC {
+public extension KVC {
 
 	/// Subscript for getting and setting object properties.
 	/// Handles failure silently.
-	public subscript (key: String) -> Any {
+	subscript (key: String) -> Any {
 		get {
 			return (try? get(key: key)) as Any
 		}
@@ -80,37 +80,37 @@ extension KVC {
 	}
 
 	/// Get value for key; may throw Runtime error.
-	public func get(key: String) throws -> Any {
+	func get(key: String) throws -> Any {
 		return try RuntimeExtensions.get(key, from: self)
 	}
 
 	/// Set value for key; may throw Runtime error.
-	public func set(value: Any, key: String) throws {
+	func set(value: Any, key: String) throws {
 		try RuntimeExtensions.set(value, key: key, for: self)
 	}
 
-	public func properties() throws ->  [PropertyInfo]{
+	func properties() throws ->  [PropertyInfo]{
 		return try RuntimeExtensions.properties(self)
 	}
 
-	public static func properties() throws -> [PropertyInfo]{
+	static func properties() throws -> [PropertyInfo]{
 		return try RuntimeExtensions.properties(self)
 	}
 
 	@discardableResult
-	public func update(with dictionary: Dictionary<String, Any>) throws -> Self{
+	func update(with dictionary: Dictionary<String, Any>) throws -> Self{
 		let mutableSelf = self
 		try RuntimeExtensions.update(mutableSelf, with: dictionary)
 		return self
 	}
 
 	@discardableResult
-	public func updateWithKeyValues<O: KVC>(of object: O) throws -> Self{
+	func updateWithKeyValues<O: KVC>(of object: O) throws -> Self{
 		try RuntimeExtensions.update(self, withKeyValuesOf: object)
 		return self
 	}
 
-	public func reflectToDictionary() throws -> Dictionary<String, Any>{
+	func reflectToDictionary() throws -> Dictionary<String, Any>{
 		return try .init(self)
 	}
 

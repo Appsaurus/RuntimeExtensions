@@ -60,7 +60,7 @@ public protocol ReflectableAssociatedEnum {
 }
 
 public extension ReflectableAssociatedEnum {
-	public var reflectedAssociation: (label:String, value: Any?) {
+    var reflectedAssociation: (label:String, value: Any?) {
 		get {
 			let mirror = Mirror(reflecting: self)
 			if let associated = mirror.children.first {
