@@ -15,14 +15,15 @@ extension KVCStruct {
 
 	/// Subscript for getting and setting value properties.
 	/// Handles failure silently.
-	public subscript (key: String) -> Any? {
-		get {
-			return try? get(key: key)
-		}
-		set {
-			_ = try? set(value: newValue as Any, key: key)
-		}
-	}
+    public subscript (key: String) -> Any {
+        get {
+            let value = try? get(key: key)
+            return value as Any
+        }
+        set {
+            _ = try? set(value: newValue as Any, key: key)
+        }
+    }
 
 	/// Get value for key; may throw Runtime error.
 	public func get(key: String) throws -> Any {
@@ -70,14 +71,15 @@ public extension KVC {
 
 	/// Subscript for getting and setting object properties.
 	/// Handles failure silently.
-	subscript (key: String) -> Any {
-		get {
-			return (try? get(key: key)) as Any
-		}
-		set {
-			_ = try? set(value: newValue, key: key)
-		}
-	}
+    subscript (key: String) -> Any {
+        get {
+            let value = try? get(key: key)
+            return value as Any
+        }
+        set {
+            _ = try? set(value: newValue as Any, key: key)
+        }
+    }
 
 	/// Get value for key; may throw Runtime error.
 	func get(key: String) throws -> Any {

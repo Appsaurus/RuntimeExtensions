@@ -56,7 +56,7 @@
             );
             HEADER_SEARCH_PATHS = (
                "$(inherited)",
-               "$(SRCROOT)/.build/checkouts/CRuntime.git--4059811826635381384/Sources/CRuntime"
+               "$(SRCROOT)/.build/checkouts/CRuntime/Sources/CRuntime"
             );
             INFOPLIST_FILE = "RuntimeExtensions.xcodeproj/Runtime_Info.plist";
             IPHONEOS_DEPLOYMENT_TARGET = "8.0";
@@ -98,7 +98,7 @@
             );
             HEADER_SEARCH_PATHS = (
                "$(inherited)",
-               "$(SRCROOT)/.build/checkouts/CRuntime.git--4059811826635381384/Sources/CRuntime"
+               "$(SRCROOT)/.build/checkouts/CRuntime/Sources/CRuntime"
             );
             INFOPLIST_FILE = "RuntimeExtensions.xcodeproj/Runtime_Info.plist";
             IPHONEOS_DEPLOYMENT_TARGET = "8.0";
@@ -424,7 +424,7 @@
             );
             HEADER_SEARCH_PATHS = (
                "$(inherited)",
-               "$(SRCROOT)/.build/checkouts/CRuntime.git--4059811826635381384/Sources/CRuntime"
+               "$(SRCROOT)/.build/checkouts/CRuntime/Sources/CRuntime"
             );
             INFOPLIST_FILE = "RuntimeExtensions.xcodeproj/RuntimeExtensions_Info.plist";
             IPHONEOS_DEPLOYMENT_TARGET = "8.0";
@@ -466,7 +466,7 @@
             );
             HEADER_SEARCH_PATHS = (
                "$(inherited)",
-               "$(SRCROOT)/.build/checkouts/CRuntime.git--4059811826635381384/Sources/CRuntime"
+               "$(SRCROOT)/.build/checkouts/CRuntime/Sources/CRuntime"
             );
             INFOPLIST_FILE = "RuntimeExtensions.xcodeproj/RuntimeExtensions_Info.plist";
             IPHONEOS_DEPLOYMENT_TARGET = "8.0";
@@ -652,7 +652,7 @@
             );
             HEADER_SEARCH_PATHS = (
                "$(inherited)",
-               "$(SRCROOT)/.build/checkouts/CRuntime.git--4059811826635381384/Sources/CRuntime"
+               "$(SRCROOT)/.build/checkouts/CRuntime/Sources/CRuntime"
             );
             INFOPLIST_FILE = "RuntimeExtensions.xcodeproj/RuntimeExtensionsTests_Info.plist";
             IPHONEOS_DEPLOYMENT_TARGET = "8.0";
@@ -692,7 +692,7 @@
             );
             HEADER_SEARCH_PATHS = (
                "$(inherited)",
-               "$(SRCROOT)/.build/checkouts/CRuntime.git--4059811826635381384/Sources/CRuntime"
+               "$(SRCROOT)/.build/checkouts/CRuntime/Sources/CRuntime"
             );
             INFOPLIST_FILE = "RuntimeExtensions.xcodeproj/RuntimeExtensionsTests_Info.plist";
             IPHONEOS_DEPLOYMENT_TARGET = "8.0";
@@ -746,7 +746,7 @@
             "OBJ_22"
          );
          name = "SwiftTestUtils 1.0.1";
-         path = ".build/checkouts/SwiftTestUtils--2289901076601334901/Sources/Shared";
+         path = ".build/checkouts/SwiftTestUtils/Sources/Shared";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_180" = {
@@ -789,7 +789,7 @@
          isa = "PBXFileReference";
          explicitFileType = "sourcecode.swift";
          name = "Package.swift";
-         path = "/Users/brianstrobach/Appsaurus/Company/Projects/OpenSource/Swift/RuntimeExtensions/.build/checkouts/SwiftTestUtils--2289901076601334901/Package.swift";
+         path = "/Users/brianstrobach/Appsaurus/Company/Projects/OpenSource/Swift/RuntimeExtensions/.build/checkouts/SwiftTestUtils/Package.swift";
          sourceTree = "<group>";
       };
       "OBJ_190" = {
@@ -1055,7 +1055,7 @@
             "OBJ_71"
          );
          name = "Runtime";
-         path = ".build/checkouts/Runtime--4000807150763875753/Sources/Runtime";
+         path = ".build/checkouts/Runtime/Sources/Runtime";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_25" = {
@@ -1505,16 +1505,16 @@
          isa = "PBXFileReference";
          explicitFileType = "sourcecode.swift";
          name = "Package.swift";
-         path = "/Users/brianstrobach/Appsaurus/Company/Projects/OpenSource/Swift/RuntimeExtensions/.build/checkouts/Runtime--4000807150763875753/Package.swift";
+         path = "/Users/brianstrobach/Appsaurus/Company/Projects/OpenSource/Swift/RuntimeExtensions/.build/checkouts/Runtime/Package.swift";
          sourceTree = "<group>";
       };
       "OBJ_78" = {
          isa = "PBXGroup";
          children = (
-            "SwiftTestUtils::SwiftTestUtils::Product",
+            "RuntimeExtensions::RuntimeExtensionsTests::Product",
             "Runtime::Runtime::Product",
-            "RuntimeExtensions::RuntimeExtensions::Product",
-            "RuntimeExtensions::RuntimeExtensionsTests::Product"
+            "SwiftTestUtils::SwiftTestUtils::Product",
+            "RuntimeExtensions::RuntimeExtensions::Product"
          );
          name = "Products";
          path = "";
