@@ -65,7 +65,7 @@ extension KVCStruct {
 }
 
 /// Enables dynamic, KVC-style behavior for native Swift classes.
-public protocol KVC : class {}
+public protocol KVC : AnyObject {}
 
 public extension KVC {
 
