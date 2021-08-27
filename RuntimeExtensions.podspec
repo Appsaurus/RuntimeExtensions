@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "RuntimeExtensions"
   s.summary          = "A short description of RuntimeExtensions."
-  s.version          = "0.1.6"
+  s.version          = "0.1.7"
   s.homepage         = "github.com/Strobocop/RuntimeExtensions"
   s.license          = 'MIT'
   s.author           = { "Brian Strobach" => "brian@appsaurus.io" }
