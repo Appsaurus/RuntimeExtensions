@@ -7,7 +7,7 @@
 
 import Runtime
 
-extension PropertyInfo {
+public extension PropertyInfo {
     func typeInfo() throws -> TypeInfo {
         try Runtime.typeInfo(of: type)
     }

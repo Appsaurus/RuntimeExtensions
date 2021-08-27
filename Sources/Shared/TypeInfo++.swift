@@ -7,7 +7,7 @@
 
 import Runtime
 
-extension TypeInfo {
+public extension TypeInfo {
     func isArray() -> Bool {
         mangledName == "Array"
     }
