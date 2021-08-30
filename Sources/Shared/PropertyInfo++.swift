@@ -16,31 +16,58 @@ public extension PropertyInfo {
         return try typeInfo().kind
     }
 
-    func isEnum() throws -> Bool {
-        try typeInfo().isEnum()
+    func genericTypeInfo(at index: Int) -> TypeInfo? {
+        return try? typeInfo().genericTypeInfo(at: index)
     }
 
-    func isOptional() throws -> Bool {
-        try typeInfo().isOptional()
+    func genericType(at index: Int) -> Any.Type? {
+        return try? typeInfo().genericType(at: index)
     }
 
-    func isArray() throws -> Bool {
-        try typeInfo().isArray()
+    var isArray: Bool {
+        return proxy(\.isArray)
     }
 
-    func elementTypeInfo() throws -> TypeInfo? {
-        try genericTypeInfo(at: 0)
+    var arrayElementType: Any.Type? {
+        return proxy(\.arrayElementType)
     }
 
-    func genericTypeInfo(at index: Int) throws -> TypeInfo? {
-        try typeInfo().genericTypeInfo(at: index)
+    var isDictionary: Bool {
+        return proxy(\.isDictionary)
     }
 
-    func genericTypes() throws -> [Any.Type] {
-        try typeInfo().genericTypes
+    var dictionaryKeyType: Any.Type? {
+        return proxy(\.dictionaryKeyType)
     }
 
-    func genericType(at index: Int) throws -> Any.Type? {
-        try typeInfo().genericType(at: index)
+    var dictionaryKeyTypeInfo: TypeInfo? {
+        return proxy(\.dictionaryKeyTypeInfo)
+    }
+
+    var dictionaryValueType: Any.Type? {
+        return proxy(\.dictionaryValueType)
+    }
+
+    var dictionaryValueTypeInfo: TypeInfo? {
+        return proxy(\.dictionaryValueTypeInfo)
+    }
+
+    var isEnum: Bool {
+        proxy(\.isEnum)
+    }
+
+    var isOptional: Bool {
+        proxy(\.isOptional)
+    }
+
+    private func proxy(_ keyPath: KeyPath<TypeInfo, Bool>) -> Bool {
+        guard let isTrue = try? typeInfo()[keyPath: keyPath] else {
+            return false
+        }
+        return isTrue
+    }
+
+    private func proxy<Value>(_ keyPath: KeyPath<TypeInfo, Value?>) -> Value? {
+        return try? typeInfo()[keyPath: keyPath]
     }
 }

@@ -9,47 +9,58 @@ import Runtime
 
 public extension TypeInfo {
 
-    func genericTypeInfo(at index: Int) throws -> TypeInfo? {
-        guard let genericType = try genericType(at: index) else {
-            return nil
-        }
-
-        return try Runtime.typeInfo(of: genericType)
+    func genericTypeInfo(at index: Int) -> TypeInfo? {
+        return optionalTypeInfo(genericType(at: index))
     }
 
-
-    func genericType(at index: Int) throws -> Any.Type? {
+    func genericType(at index: Int) -> Any.Type? {
         guard genericTypes.count > index else {
             return nil
         }
         return genericTypes[index]
     }
 
-    func isArray() -> Bool {
+    var isArray: Bool {
         mangledName == "Array"
     }
 
     var arrayElementType: Any.Type? {
-        return isArray() ? try? genericType(at: 0) : nil
+        return isArray ? genericType(at: 0) : nil
     }
 
-    func isDictionary() -> Bool {
+    var isDictionary: Bool {
         mangledName == "Dictionary"
     }
 
     var dictionaryKeyType: Any.Type? {
-        return isDictionary() ? try? genericType(at: 0) : nil
+        return isDictionary ? genericType(at: 0) : nil
+    }
+
+    var dictionaryKeyTypeInfo: TypeInfo? {
+        return optionalTypeInfo(dictionaryKeyType)
     }
 
     var dictionaryValueType: Any.Type? {
-        return isDictionary() ? try? genericType(at: 1) : nil
+        return isDictionary ? genericType(at: 1) : nil
     }
 
-    func isEnum() -> Bool {
+    var dictionaryValueTypeInfo: TypeInfo? {
+        return optionalTypeInfo(dictionaryValueType)
+    }
+
+
+    var isEnum: Bool {
         return kind == .enum
     }
 
-    func isOptional() -> Bool {
+    var isOptional: Bool {
         return kind == .optional
     }
+}
+
+private func optionalTypeInfo(_ type: Any.Type?) -> TypeInfo? {
+    guard let type = type else {
+        return nil
+    }
+    return try? typeInfo(of: type)
 }
