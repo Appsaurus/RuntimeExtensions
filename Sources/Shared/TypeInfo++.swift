@@ -8,21 +8,6 @@
 import Runtime
 
 public extension TypeInfo {
-    func isArray() -> Bool {
-        mangledName == "Array"
-    }
-
-    func elementTypeInfo() throws -> TypeInfo? {
-        try genericTypeInfo(at: 0)
-    }
-
-    func isEnum() -> Bool {
-        return kind == .enum
-    }
-
-    func isOptional() -> Bool {
-        return kind == .optional
-    }
 
     func genericTypeInfo(at index: Int) throws -> TypeInfo? {
         guard let genericType = try genericType(at: index) else {
@@ -38,5 +23,33 @@ public extension TypeInfo {
             return nil
         }
         return genericTypes[index]
+    }
+
+    func isArray() -> Bool {
+        mangledName == "Array"
+    }
+
+    var arrayElementType: Any.Type? {
+        return isArray() ? try? genericType(at: 0) : nil
+    }
+
+    func isDictionary() -> Bool {
+        mangledName == "Dictionary"
+    }
+
+    var dictionaryKeyType: Any.Type? {
+        return isDictionary() ? try? genericType(at: 0) : nil
+    }
+
+    var dictionaryValueType: Any.Type? {
+        return isDictionary() ? try? genericType(at: 1) : nil
+    }
+
+    func isEnum() -> Bool {
+        return kind == .enum
+    }
+
+    func isOptional() -> Bool {
+        return kind == .optional
     }
 }
