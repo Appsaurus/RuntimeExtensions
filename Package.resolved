@@ -2,21 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "CRuntime",
-        "repositoryURL": "https://github.com/wickwirew/CRuntime.git",
-        "state": {
-          "branch": null,
-          "revision": "95f911318d8c885f6fc05e971471f94adfd39405",
-          "version": "2.1.2"
-        }
-      },
-      {
         "package": "Runtime",
         "repositoryURL": "https://github.com/wickwirew/Runtime",
         "state": {
           "branch": null,
-          "revision": "61c9776f47d2951bdc562486ad348e5e1ca2e180",
-          "version": "2.1.1"
+          "revision": "dad03135d7701a4e7b3a4051e75d6b37bd8e178e",
+          "version": null
         }
       },
       {
