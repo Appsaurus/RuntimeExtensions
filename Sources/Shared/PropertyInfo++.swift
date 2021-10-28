@@ -1,6 +1,6 @@
 //
 //  PropertyInfo++.swift
-//  
+//
 //
 //  Created by Brian Strobach on 8/27/21.
 //
@@ -17,11 +17,17 @@ public extension PropertyInfo {
     }
 
     func genericTypeInfo(at index: Int) -> TypeInfo? {
-        return try? typeInfo().genericTypeInfo(at: index)
+        guard let value = try? typeInfo().genericTypeInfo(at: index) else {
+            return nil
+        }
+        return value
     }
 
     func genericType(at index: Int) -> Any.Type? {
-        return try? typeInfo().genericType(at: index)
+        guard let value = try? typeInfo().genericType(at: index) else {
+            return nil
+        }
+        return value
     }
 
     var isArray: Bool {
@@ -68,6 +74,9 @@ public extension PropertyInfo {
     }
 
     private func proxy<Value>(_ keyPath: KeyPath<TypeInfo, Value?>) -> Value? {
-        return try? typeInfo()[keyPath: keyPath]
+        guard let value = try? typeInfo()[keyPath: keyPath] else {
+            return nil
+        }
+        return value
     }
 }
