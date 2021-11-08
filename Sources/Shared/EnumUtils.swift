@@ -28,8 +28,7 @@ open class EnumUtils{
 }
 
 
-#if swift(>=4.2)
-#else
+#if compiler(<4.2)
 public protocol CaseIterable: Hashable {
 	static var allCases: [Self] { get }
 }
