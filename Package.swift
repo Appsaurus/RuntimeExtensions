@@ -9,7 +9,7 @@ let package = Package(
 		.library(name: "RuntimeExtensions", targets: ["RuntimeExtensions"])
 	],
 	dependencies: [
-        .package(url: "https://github.com/wickwirew/Runtime", .exact("2.2.4")),
+        .package(url: "https://github.com/wickwirew/Runtime", .exact("2.2.7")),
 		.package(url: "https://github.com/Appsaurus/SwiftTestUtils", from: "1.0.0")
 	],
 	targets: [
